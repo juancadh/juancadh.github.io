@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+    <title>🎨 Color Selector</title>
+</head>
+<body>
+
+    <div class="tintTonesShadesContainer">
+        <div class="tints"></div>
+        <div class="shades"></div>
+        <div class="tones"></div>
+    </div>
+
+    <div class="container"> 
+  
+        <div class="partOneContainer">
+            <div class="slidecontainer">
+                <input type="range" min="0" max="255" value="0" class="slider red" id="cR">
+                <input id="cRval" name="cRval" class="ghost S" maxlength="3" val="0">
+            </div>
+            
+            <div class="slidecontainer">
+                <input type="range" min="0" max="255" value="0" class="slider green" id="cG">
+                <input id="cGval" name="cGval" class="ghost S" maxlength="3" val="0">
+            </div>
+            
+            <div class="slidecontainer">
+                <input type="range" min="0" max="255" value="0" class="slider blue" id="cB">
+                <input id="cBval" name="cBval" class="ghost S" maxlength="3" val="0">
+            </div>
+            
+            <div class="slidecontainer">
+                <input type="range" min="0" max="100" value="0" class="slider opacity" id="cA">
+                <input id="cAval" name="cAval" class="ghost S" maxlength="3" val="0">
+            </div>
+    
+            <div class="options">
+                
+                <div id="eyedropperImg">
+                    <form action='#' onsubmit="return false;">
+                        <label for="imgfile">
+                            <i class="far fa-file-image"></i>
+                        </label>
+                        <input type='file' id='imgfile' class="hidden" />
+                    </form>             
+                </div>
+                <div id="randomizeMe">
+                    <i class="fas fa-random"></i>
+                </div>
+                <div id="copyMe">
+                    <i class="far fa-copy"></i>
+                </div>
+                <div id="saveMe">
+                    <i class="far fa-save"></i>
+                </div>
+                <div id="hexValContainer">
+                    <input class="ghost" type="text" name="hexVal" id="hexVal" value="#ffffff" maxlength="10">
+                    <i class="far fa-copy" id="copyHex"></i>
+                </div>            
+            </div>
+    
+            <div class="savedColors">
+                <div id="0"><i class="fas fa-times-circle"></i></div>
+                <div id="1"><i class="fas fa-times-circle"></i></div>
+                <div id="2"><i class="fas fa-times-circle"></i></div>
+                <div id="3"><i class="fas fa-times-circle"></i></div>
+                <div id="4"><i class="fas fa-times-circle"></i></div>
+                <div id="5"><i class="fas fa-times-circle"></i></div>
+                <div id="6"><i class="fas fa-times-circle"></i></div>
+                <div id="7"><i class="fas fa-times-circle"></i></div>
+            </div>
+        </div>
+
+        <div class="partTwoContainer">
+            <div class="imgContainer">
+                <div class="ml5Prediction"></div>
+                <canvas id="imgCanvas" width="300" height="300"></canvas>
+                <div class="magnifier"></div>
+                <div class="paletteImg">
+                    <div id="0"></div>
+                    <div id="1"></div>
+                    <div id="2"></div>
+                    <div id="3"></div>
+                    <div id="4"></div>
+                    <div id="5"></div>
+                    <div id="6"></div>
+                    <div id="7"></div>
+                    <div id="8"></div>
+                </div>
+                <img id="imagen" src="" />
+            </div>
+        </div>
+    
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
