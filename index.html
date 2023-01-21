@@ -13,7 +13,7 @@
 </head>
 <body>
     <!-- INSPIRATION
-        https://preview.themeforest.net/item/arter-cv-resume-wordpress-theme/full_screen_preview/28719764?clickid=ybyUO-R6NxyIWqVx6EVE0zaRUkA12bQnpxR41Y0&iradid=275988&iradtype=ONLINE_TRACKING_LINK&irgwc=1&irmptype=mediapartner&irpid=369282&mp_value1=&utm_campaign=af_impact_radius_369282&utm_medium=affiliate&utm_source=impact_radius 
+        https://arter.bslthemes.com/light/
     -->
 
 <style>
@@ -173,7 +173,7 @@ color-subtitle{ color: var(--c-gray);}
     overflow: hidden;
     max-width: 1500px;
     height: auto;
-    background-color: rgb(242, 242, 242);
+    background-color: rgb(247, 247, 247);
 }
 
 .banner-container{
@@ -194,10 +194,9 @@ color-subtitle{ color: var(--c-gray);}
 }
 
 .banner-wrapper img{
-    filter: blur(4px) grayscale(0.3);
-    -webkit-filter: blur(4px) grayscale(0.3);
+    height: 250px;
     object-fit: cover;
-    object-position: 0% 30%;
+    object-position: 0% 60%;
 }
 
 .banner-text {
@@ -218,6 +217,15 @@ color-subtitle{ color: var(--c-gray);}
 .banner-text p {
   font-size: 1.1rem;
   font-weight: 100;
+}
+
+.banner-overlay{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: linear-gradient(40deg,rgba(45,45,58,.5) 15%,rgba(45,45,58,.3) 50%,rgba(43,43,53,.3) 100%);
 }
 
 .content-container{
@@ -252,6 +260,15 @@ color-subtitle{ color: var(--c-gray);}
 }
 
 .title{
+    color: var(--c-black);
+    font-weight: 900;
+    padding: 0.5rem 0rem;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+
+.title-box{
     background-color: var(--c-black);
     color: var(--c-white);
     font-weight: 900;
@@ -261,6 +278,7 @@ color-subtitle{ color: var(--c-gray);}
     margin-bottom: 2rem;
     letter-spacing: 1px;
 }
+
 
 .content-section{
     padding-bottom: 2rem;
@@ -285,6 +303,7 @@ color-subtitle{ color: var(--c-gray);}
         position: relative;
         width: 100%;
         transform: none;
+        height: auto;
     }
     .main{
         padding: 5px;
@@ -295,9 +314,146 @@ color-subtitle{ color: var(--c-gray);}
         transform: translate(-50%, -80%);
         text-align: center;
     }
+    .lateral-content-wrapper{
+        max-height: none;
+    }
 }
 
+.skills-container{
+    display: flex;
+    flex-direction: column;
+}
 
+.skill-box{
+    display: flex;
+    flex-direction: column;    
+}
+
+.sb-text{
+    display: flex;
+    height: 30px;
+    font-size: 0.9rem;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem 0 0 0;
+}
+
+.sbt-lbl{
+    font-weight: 900;
+}
+
+.sb-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.sbb-rank{
+    font-size: 1rem;
+    margin: 0 2px;
+    color: rgb(206, 206, 206);
+}
+
+.sbb-rank.active{
+    color: var(--c-primary-3);
+}
+
+.about-container{
+    margin: 1rem 0 2.5rem 0;
+}
+
+blockquote {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-style: italic;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0.25em 0;
+    padding: 0.35em 40px;
+    line-height: 1.45;
+    position: relative;
+}
+
+blockquote:before {
+    display: block;
+    padding-left: 10px;
+    content: "\201C";
+    font-size: 100px;
+    position: absolute;
+    left: -20px;
+    top: -35px;
+    color: var(--c-primary-2);
+}
+
+.timeline-wrapper{                                
+    display: flex;     
+    flex-direction: column;                   
+}
+.timeline-box{
+    display: flex;
+    flex-direction: row;
+}
+.timeline-box > div{
+    padding: 0 1rem;
+}
+.tl-date-box{
+    display: flex;
+}
+.tl-d-bar{
+    position: relative;
+    width: 5px;
+    height: 100%;
+    background-color:  var(--c-primary);      
+    margin-left: 1rem;                   
+}
+.tl-d-bar::before{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--c-primary);
+    top: -1px;
+    left: -7.5px;
+}
+.tl-timeframe{
+    width: 100px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+.tl-title{
+    font-weight: 900;
+    font-size: 1.7rem;
+}
+.tl-subtitle{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--c-gray);
+}
+.tl-desc{
+    font-size: 1rem;
+    margin-top: 10px;
+}
+.tl-desc-box{
+    margin: 1rem 0;
+}
+
+@media only screen and (max-width: 940px) {
+    .timeline-box{                                
+        flex-direction: column;        
+        margin-top: 2rem;           
+    }
+
+    .tl-timeframe{
+        flex-direction: row;
+        width: 100%;
+    }
+    .tl-timeframe > div{
+        margin-right: 20px;
+    }
+}
 
 </style>
 
@@ -317,13 +473,14 @@ color-subtitle{ color: var(--c-gray);}
                         <div><img src="/statics/img/lang-pt.svg" alt="lang-pt" width="100%" height="20px"></div>
                     </div>
                 </div>
-                
+
                 <div class="lateral-content-wrapper">
                     <div class="lateral-menu-socials">
                         <a href="https://github.com/juancadh" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="https://co.linkedin.com/in/juan-camilo-d%C3%ADaz-h-2aa67677" target="_blank"><i class="fab fa-linkedin"></i></a>
                         <a href="https://twitter.com/juancadh" target="_blank"><i class="fab fa-twitter"></i></a>
                         <a href="https://www.instagram.com/juancadh1/" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="mailto:juancadh@gmail.com" target="_blank"><i class="far fa-envelope" aria-hidden="true"></i></a>
                     </div>
                     <div class="lateral-menu-2">
                         <div><i class="fas fa-home"></i> Bogotá, Colombia</div>
@@ -333,9 +490,85 @@ color-subtitle{ color: var(--c-gray);}
                         <div id="languages-chart"></div>
                     </div>
                     <div class="lateral-menu-4">
-                        
+                        <div class="skills-container">
+                            <div class="skill-box">
+                                <div class="sb-text">
+                                    <p class="sbt-lbl">Python</p>
+                                    <p class="sbt-ptc">85%</p>
+                                </div>
+                                <div class="sb-bar">
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star-half"></i></div>
+                                    <div class="sbb-rank"><i class="fas fa-star"></i></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-box">
+                                <div class="sb-text">
+                                    <p class="sbt-lbl">HTML, CSS, JS</p>
+                                    <p class="sbt-ptc">90%</p>
+                                </div>
+                                <div class="sb-bar">
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank"><i class="fas fa-star"></i></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-box">
+                                <div class="sb-text">
+                                    <p class="sbt-lbl">SQL</p>
+                                    <p class="sbt-ptc">80%</p>
+                                </div>
+                                <div class="sb-bar">
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank"><i class="fas fa-star"></i></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-box">
+                                <div class="sb-text">
+                                    <p class="sbt-lbl">Excel & VBA</p>
+                                    <p class="sbt-ptc">85%</p>
+                                </div>
+                                <div class="sb-bar">
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star"></i></div>
+                                    <div class="sbb-rank active"><i class="fas fa-star-half"></i></div>
+                                    <div class="sbb-rank"><i class="fas fa-star"></i></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="lateral-menu-extra">
+                    <div class="lateral-menu-extra pt-5">
                         <p><strong>Last update:</strong> Friday January 20, 2023</p>
                     </div>
                 </div>
@@ -348,25 +581,104 @@ color-subtitle{ color: var(--c-gray);}
 
                 <div class="banner-container">
                     <div class="banner-wrapper">
-                        <img src="/statics/img/landscape-1.jpg" alt="banner image" width="100%" height="300px">
+                        <img src="https://images.pexels.com/photos/247378/pexels-photo-247378.jpeg" alt="banner image" width="100%" height="300px">
+                        <div class="banner-overlay"></div>             
                         <div class="banner-text">
-                            <h1>My Portfolio</h1>                            
+                            <h1>Resume</h1>                            
                             <a href="../statics/resources/CV - Juan Camilo Diaz.pdf" target="_blank" class="btn btn-primary mt-2"><i class="fa fa-download pr-2" aria-hidden="true"></i> Download CV</a>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
 
                 <div class="content-container">
-                    <div class="summary-topics-container">
-                        To be done
+                    <div class="about-container">
+                        <blockquote>
+                        Hi! I'm an Industrial engineer with major in quantitative methods and economist with focus in econometrics. 
+                        I have +5 years of experience in data analytics areas for financial sector working in a bank and a bureau of credit. 
+                        Currently, I am working as a consultant in data analytics and software development at the Inter-American Development Bank.
+                        </blockquote>
+                    </div>
+                    <div class="timeline-container content-section">
+                        <h2 class="title">Work Experience</h2>
+                        <div class="timeline-wrapper">
+                            <div class="timeline-box">
+                                <div class="tl-date-box">
+                                    <div class="tl-timeframe">
+                                        <div>Current</div>
+                                        <div>Mar 2020</div>
+                                    </div>
+                                    <div class="tl-d-bar"></div>
+                                </div>
+                                <div class="tl-desc-box">
+                                    <div class="tl-title">Interamerican Development Bank (IDB)</div>
+                                    <div class="tl-subtitle">Consultant - DS</div>
+                                    <div class="tl-desc">
+                                        Full-stack design and development of a web-app solution using Django as back-end framework and AWS as cloud infrastructure.
+                                        Designed, developed and implemented a Dashboard in Power BI that shows a descriptive analysis and results from a Machine Learning model that predicts the fiscal
+                                        revenue using electronic invoicing data set.
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="timeline-box">
+                                <div class="tl-date-box">
+                                    <div class="tl-timeframe">
+                                        <div>Sep 2018</div>
+                                        <div>Jan 2017</div>
+                                    </div>
+                                    <div class="tl-d-bar"></div>
+                                </div>
+                                <div class="tl-desc-box">
+                                    <div class="tl-title">TransUnion</div>
+                                    <div class="tl-subtitle">Data Scientist</div>
+                                    <div class="tl-desc">
+                                        Developed an automated reporting system providing financial sector insights about customers' credit behavior. This solution was created using Hadoop Distributed File
+                                        System and Spark as compute engine. Further data analysis and data modeling were performed in python and R.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-box">
+                                <div class="tl-date-box">
+                                    <div class="tl-timeframe">
+                                        <div>Jan 2017</div>
+                                        <div>Aug 2015</div>
+                                    </div>
+                                    <div class="tl-d-bar"></div>
+                                </div>
+                                <div class="tl-desc-box">
+                                    <div class="tl-title">Banco Davivienda</div>
+                                    <div class="tl-subtitle">Data Analyst</div>
+                                    <div class="tl-desc">
+                                        Developed and implemented a financial engine providing information and analytics about the customer life cycle.
+                                        This solution was created using Microsoft SQL Server stored procedures that were widely used by the Customer Analytics Direction in the
+                                        decision-making process. This study resulted in other useful analyses like Next Best Offer (NBO) and welcoming strategies for payroll saving accounts campaigns.
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-box">
+                                <div class="tl-date-box">
+                                    <div class="tl-timeframe">
+                                        <div>Aug 2015</div>
+                                        <div>Jun 2014</div>
+                                    </div>
+                                    <div class="tl-d-bar"></div>
+                                </div>
+                                <div class="tl-desc-box">
+                                    <div class="tl-title">Central Bank Of Colombia</div>
+                                    <div class="tl-subtitle">Internship</div>
+                                    <div class="tl-desc">Responsable for literature reviewing, data searching and processing, and the implementation of econometric and statistical models in R and RATS for exchange rate forecasting.</div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        
                     </div>
                     <div class="education-container content-section">
-                        <h2 class="title">Education</h2>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, repellendus. Voluptatem fugit ut similique rem inventore minima qui iste! Laborum, quae nobis. Aut ducimus voluptate deleniti nam nulla? Doloremque, temporibus!
-                    </div>
-                    <div class="experience-container content-section">
-                        <h2 class="title">Experience</h2>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, repellendus. Voluptatem fugit ut similique rem inventore minima qui iste! Laborum, quae nobis. Aut ducimus voluptate deleniti nam nulla? Doloremque, temporibus!                    
+                        <h2 class="title">Academic Background</h2>                        
                     </div>
                 </div>
 
@@ -406,7 +718,7 @@ color-subtitle{ color: var(--c-gray);}
           itemMargin: { vertical: 0 }
         },
         responsive: [{
-          breakpoint: 480, options: { legend: { show: false } }
+          breakpoint: 480, options: { legend: { show: true, offsetX: -15, } }
         }]
         };
 
