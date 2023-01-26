@@ -84,7 +84,7 @@ color-subtitle{ color: var(--c-gray);}
 
 .lateral-content-wrapper{
   height: 100%;
-  max-height: 600px;
+  max-height: 1000px;
   overflow-x: hidden;
   overflow-y: auto;
   padding: 2rem 1.5rem;
@@ -541,6 +541,7 @@ blockquote:before {
 
 .article-card:hover{
   transform: scale(1.02);
+  text-decoration: none;
 }
 
 .art-image img{
@@ -624,6 +625,10 @@ blockquote:before {
   .tl-note{
     margin: 1rem auto;
   }
+
+  .tl-desc-box{
+    text-align: center;
+  } 
 
   .article-card{
     height: auto;
